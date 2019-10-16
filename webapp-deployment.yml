@@ -1,18 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: "2048-deployment"
-  namespace: "2048-game"
+  name: "simple-webapp-deployment"
+  namespace: "simple-webapp"
 spec:
   replicas: 2
   template:
     metadata:
       labels:
-        app: "2048"
+        app: "simple-webapp"
     spec:
       containers:
       - image: kutzhanov/simple-webapp:v1
         imagePullPolicy: Always
         name: "simple-webapp"
         ports:
-        - containerPort: 80
+        - containerPort: 8080
