@@ -6,8 +6,8 @@ LABEL maintainer="kutzhanov@gmail.com"
 
 COPY sample.war /usr/local/tomcat/webapps
 
-RUN ln -sf /dev/stdout /opt/bitnami/apache-tomcat/logs/catalina.out
-
 EXPOSE 8080
+
+VOLUME /usr/local/tomcat/webapps
 
 CMD ["catalina.sh", "run"]
